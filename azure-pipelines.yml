@@ -11,6 +11,9 @@ jobs:
     - linux: py37-simple-linux 
       name: py37_simple_linux_custom_name
     - linux32: py37-simple-linux32
+      libraries:
+        yum:
+          - openssl-devel
     - macos: py37-simple-macos
     - windows: py37-simple-windows
     - macos: compiler_macos_conda
