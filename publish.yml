@@ -43,6 +43,14 @@ jobs:
           displayName: Install Python
         - bash: python -m pip install --upgrade pip execute-517
           displayName: Upgrading pip
+        - ${{ if eq(variables.os, 'linux') }}:
+            - bash: |
+                python -m pip install --upgrade docker
+              displayName: Installing docker
+        - ${{ if eq(variables.os, 'linux') }}:
+            - bash: |
+                docker run --rm --privileged hypriot/qemu-register
+              displayName: Registering qemu
         - ${{ if parameters.remove_local_scheme }}:
             - bash: |
                 version=$(execute-517 'setup.py --version' | tail -1 | cut -d '+' -f 1)
