@@ -52,7 +52,7 @@ jobs:
           # Docker and manylinuxaarch64
           ${{ if eq(env_pair.key, 'manylinuxaarch64') }}:
             setarch: 'linuxaarch64'
-          ${{ if or(eq(env_pair.key, 'linuxaarch64') }}:
+          ${{ if eq(env_pair.key, 'linuxaarch64') }}:
             manylinux_container: ${{ coalesce(env['manylinux_image'], 'manylinux2014_aarch64') }}
             manylinux_image: ${{ format('quay.io/pypa/{0}:latest', variables.manylinux_container) }}
             docker_python_exec: ${{ coalesce(env['docker_python'], variables.manylinux_python, '/opt/python/cp36-cp36m/bin/python') }}  
