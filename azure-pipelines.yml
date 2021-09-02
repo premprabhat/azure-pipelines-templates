@@ -11,18 +11,18 @@ jobs:
       yum:
         - openssl-devel
     envs:
-    - linux: py37-simple-linux
-      name: py37_simple_linux_custom_name
-    - linux32: py37-simple-linux32
-    - linux32: py38-simple-linux32
-    - manylinux: py37-simple-linux
-      manylinux_image: manylinux2014_x86_64
-    - linux: py39-simple-linux
-      docker_image: python:3.9.0rc1-slim-buster
-      docker_python: /usr/local/bin/python
-    - macos: py37-simple-macos
-    - windows: py37-simple-windows
-    - macos: compiler_macos_conda
+    #- linux: py37-simple-linux
+    #  name: py37_simple_linux_custom_name
+    #- linux32: py37-simple-linux32
+    #- linux32: py38-simple-linux32
+    #- manylinux: py37-simple-linux
+    #  manylinux_image: manylinux2014_x86_64
+    #- linux: py39-simple-linux
+    #  docker_image: python:3.9.0rc1-slim-buster
+    #  docker_python: /usr/local/bin/python
+    #- macos: py37-simple-macos
+    #- windows: py37-simple-windows
+    #- macos: compiler_macos_conda
     - manylinuxaarch64: py37-simple-linux-aarch64
       manylinux_image: manylinux2014_aarch64
 
@@ -52,7 +52,7 @@ jobs:
       #- wheels_cp3[78]-win_amd64
       #- wheels_cp37-manylinux_x86_64
       - wheels_cp37-manylinux_aarch64
-      - sdist
+      #- sdist
 
 # - template: publish.yml
 #   parameters:
