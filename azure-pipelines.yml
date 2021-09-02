@@ -23,6 +23,8 @@ jobs:
     - macos: py37-simple-macos
     - windows: py37-simple-windows
     - macos: compiler_macos_conda
+    - manylinuxaarch64: py37-simple-linux-aarch64
+      manylinux_image: manylinux2014_aarch64
 
 - template: run-tox-env.yml
   parameters:
@@ -45,10 +47,10 @@ jobs:
     libraries:
       - libfftw3-dev
     targets:
-      - wheels_linux
-      - wheels_macos
-      - wheels_cp3[78]-win_amd64
-      - wheels_cp37-manylinux_x86_64
+      #- wheels_linux
+      #- wheels_macos
+      #- wheels_cp3[78]-win_amd64
+      #- wheels_cp37-manylinux_x86_64
       - wheels_cp37-manylinux_aarch64
       - sdist
 
