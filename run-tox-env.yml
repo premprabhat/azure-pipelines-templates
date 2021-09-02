@@ -50,7 +50,7 @@ jobs:
               manylinux_python: ${{ format('/opt/python/cp{0}-cp{0}/bin/python', replace(variables.python, '.', '')) }}
 
           # Docker and manylinuxaarch64
-          ${{ if eq(env_pair.key, 'linux32') }}:
+          ${{ if eq(env_pair.key, 'manylinuxaarch64') }}:
             setarch: 'linuxaarch64'
           ${{ if or(eq(env_pair.key, 'linuxaarch64') }}:
             manylinux_container: ${{ coalesce(env['manylinux_image'], 'manylinux2014_aarch64') }}
